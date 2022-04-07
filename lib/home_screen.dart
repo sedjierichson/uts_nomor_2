@@ -57,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Test 1 - C14190185'),),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(vertical: 30.0),
@@ -263,7 +264,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Container(
                           margin: EdgeInsets.all(20.0),
-                          child: Align(
+                          child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Icon(
                             FontAwesomeIcons.mugSaucer,
@@ -273,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         
                         Container(
-                          child: Text(
+                          child: const Text(
                           "Cooking",
                           style: TextStyle(
                             fontSize: 20.0,
@@ -287,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(height: 20.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             
                             Icon(
                               FontAwesomeIcons.clock,
@@ -311,27 +312,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20.0,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 120.0),
+            const SizedBox(height: 20.0,),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 120.0),
               child: Text(
                 'Last Seen Courses : ',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               )
             ),
             Container(
-              
               margin: EdgeInsets.all(20.0),
               height: 220.0,
-              color : Colors.red,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-
+                    decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 212, 151, 255),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                     width: 400.0,
                     height: 70.0,
-                    color: Color.fromRGBO(197, 116, 255, 1),
                     child: Row(
                       children: [
                         Container(
@@ -357,38 +358,100 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
+                    decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 212, 151, 255),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                     width: 400.0,
                     height: 70.0,
-                    color: Colors.blue,
+                    //color: Color.fromARGB(255, 212, 151, 255),
                     child: Row(
                       children: [
                         Container(
                           margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                          child: Icon(FontAwesomeIcons.calendar, size: 30.0,),
+                          child: Icon(FontAwesomeIcons.mountain, size: 30.0,),
                         ),
-                        Text("Basics of Designing")
+                        Container(
+                          margin: EdgeInsets.only(top: 20.0, left: 25.0),
+                          child:Column(
+                          
+                          children: [
+                            Text("Human Respiratory System", style: 
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),),
+                            Text("1 hour, 25 mins", textAlign: TextAlign.left,),
+                          ],
+                        ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 30.0),
+                          child: Icon(FontAwesomeIcons.play),
+                        )
                       ]
                     ),
                   ),
                   Container(
+
                     width: 400.0,
                     height: 70.0,
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 212, 151, 255),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                     child: Row(
                       children: [
                         Container(
                           margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
                           child: Icon(FontAwesomeIcons.calendar, size: 30.0,),
                         ),
-                        Text("Basics of Designing")
+                        Container(
+                          margin: EdgeInsets.only(top: 20.0, left: 25.0),
+                          child:Column(
+                          
+                          children: [
+                            Text("Integration & Differentiation", style: 
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),),
+                            Text("1 hour, 25 mins", textAlign: TextAlign.left,),
+                          ],
+                        ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 25.0),
+                          child: Icon(FontAwesomeIcons.play),
+                        )
                       ]
                     ),
-                  )
+                  ),
                 ],
               ),
             )
           ],
         ),
+
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.house,
+              size: 30.0,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.book,
+              size: 30.0,
+            ),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat_bubble,
+              size: 30.0,
+            ),
+            label: 'Chat',
+          ),
+        ]
       ),
     );
   }
